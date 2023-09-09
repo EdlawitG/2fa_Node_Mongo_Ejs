@@ -1,0 +1,26 @@
+<div class="container mx-auto mt-4">
+  <h1>Sign Up - Set 2FA</h1>
+  <form action="/verify" method="POST">
+    <input type="hidden" name="email" value="<%- userEmail %>" />
+    <p><%- userEmail %></p>
+    <% if (user.is_2fa_enabled) { %>
+    <div class="mb-3">
+      <label for="code" class="form-label">2FA Code</label>
+      <input type="text" class="form-control" id="code" name="code" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <% } else {%>
+    <p>
+      Scan the QR Code in the Authenticator app then enter the code that you see
+      in the app in the text field and click Submit.
+    </p>
+    <img src="<%= qr %>" class="img-fluid" />
+    <div class="mb-3">
+      <label for="code" class="form-label">2FA Code</label>
+      <input type="text" class="form-control" id="code" name="code" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <%} %>
+  </form>
+</div>

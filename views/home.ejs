@@ -1,0 +1,11 @@
+<div class="container mx-auto mt-4">
+  <h1>Welcome to HomePage</h1>
+  <form action="/2fa-enable/<%= ID%>" method="POST">
+    <input type="hidden" name="email" value="<%- userEmail %>" />
+    <button type="submit" class="btn btn-primary">Enable 2FA</button>
+    <!-- <% if (user.is_2fa_enabled) { %>
+      
+      <% } else {%>F
+        <%} %> -->
+  </form>
+</div>
